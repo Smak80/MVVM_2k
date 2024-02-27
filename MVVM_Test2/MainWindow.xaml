@@ -1,0 +1,34 @@
+﻿<Window x:Class="MVVM_Test2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Test2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LblHeader" Grid.Row="0" Grid.ColumnSpan="2" Content="Данные о пользователе:" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Segoe UI Black" FontSize="14"/>
+        <Label x:Name="LblNick" Grid.Row="1" Grid.Column="0" Content="Псевдоним:" Margin="4" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="Regular" FontStyle="Italic" FontFamily="Segoe UI" FontSize="14"/>
+        <Label x:Name="LblName" Grid.Row="2" Grid.Column="0" Content="Имя:" Margin="4" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="Regular" FontStyle="Italic" FontFamily="Segoe UI" FontSize="14"/>
+        <Label x:Name="LblBirth" Grid.Row="3" Grid.Column="0" Content="Дата рождения:" Margin="4" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="Regular" FontStyle="Italic" FontFamily="Segoe UI" FontSize="14"/>
+        <TextBox x:Name="TbNick" Grid.Row="1" Grid.Column="1" Margin="4" VerticalContentAlignment="Center"/>
+        <Button x:Name="BtnRemove" Grid.Row="1" Grid.Column="2" VerticalContentAlignment="Center" Margin="4" Background="#FFF5C3C3">
+            <Image Width="20" Height="20" Margin="2" Source="del.png" OpacityMask="Black"/>
+        </Button>
+        <TextBox x:Name="TbName"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="4" VerticalContentAlignment="Center"/>
+        <DatePicker x:Name="DpBirth" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="4" VerticalContentAlignment="Center"/>
+        <Button x:Name="BtnLogin" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Content="Войти" Margin="4" VerticalAlignment="Bottom" FontSize="14" FontFamily="Bahnschrift SemiCondensed" Background="#FFA8FD70"/>
+    </Grid>
+</Window>
