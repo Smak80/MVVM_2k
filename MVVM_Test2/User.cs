@@ -34,9 +34,10 @@ namespace MVVM_Test2
         }
 
         [JsonIgnore]
-        public Boolean IsValid => Nick.Trim().Length > 0 
+        public bool IsValid => Nick.Trim().Length > 0 
                                   && Name.Trim().Length > 0
-                                  && Birth.Date >= DateTime.Now.Date.AddYears(-120) && Birth.Date <= DateTime.Now.Date.AddYears(-6);
+                                  && Birth.Date >= DateTime.Now.Date.AddYears(-120) 
+                                  && Birth.Date <= DateTime.Now.Date.AddYears(-6);
 
         public void UpdateInfoFrom(User user)
         {

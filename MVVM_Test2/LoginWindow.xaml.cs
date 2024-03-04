@@ -1,16 +1,19 @@
-﻿using System.Windows;
+﻿using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 
 namespace MVVM_Test2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
         private readonly LoginViewModel _lvm = new();
-        public MainWindow()
+
+        public LoginWindow()
         {
             InitializeComponent();
             Binding bNick = new(nameof(LoginViewModel.UserNick))
@@ -31,7 +34,16 @@ namespace MVVM_Test2
             };
             DpBirth.SetBinding(DatePicker.SelectedDateProperty, bBirth);
 
+
+            var bVisible = new Binding(nameof(LoginViewModel.IsVisible))
+            {
+                Source = _lvm.IsVisible
+            };
+            SetBinding(VisibilityProperty, bVisible);
+            
             BtnLogin.Command = _lvm.LoginCommand;
+            BtnLogin.CommandParameter = this;
+
             BtnRemove.Command = _lvm.RemoveCommand;
         }
     }
