@@ -26,7 +26,7 @@ public class LoginViewModel : INotifyPropertyChanged
         {
             SetField(ref _userNick, value);
             CurrentUser.Nick = _userNick;
-            var u = GetUserByNick(_userNick);
+            var u = _users.GetUserByNick(_userNick);
             if (u != null)
             {
                 CurrentUser.UpdateInfoFrom(u);
@@ -36,8 +36,6 @@ public class LoginViewModel : INotifyPropertyChanged
     }
 
     public User CurrentUser { get; } = new();
-
-    public User? GetUserByNick(string nick) => _users.FirstOrDefault(u => u.Nick.Equals(nick));
 
     public LoginViewModel()
     {
