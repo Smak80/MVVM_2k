@@ -55,5 +55,7 @@ public class UsersCollection : List<User>
             SaveAllUsers();
         }
     }
+
+    public User? GetUserByNick(string nick) => this.FirstOrDefault(u => u.Nick.Equals(nick));
     public bool IsExisting(User user) => this.FirstOrDefault(u => u.Nick.Equals(user.Nick)) != null;
 }
