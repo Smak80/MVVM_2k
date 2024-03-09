@@ -5,12 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Test2"
         mc:Ignorable="d"
-        Title="Змейка" Height="700" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Змейка" Width="398" Height="708" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Canvas 
-            Background="#FFCDE7F5" 
-            Margin="4,4,4,4"
-        />
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ItemsControl Grid.Row="0" Grid.Column="0" x:Name="GameElems" SizeChanged="GameElems_SizeChanged" Margin="4">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas IsItemsHost="True" Background="WhiteSmoke"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DataTemplate.Resources>
+                        <Style TargetType="Rectangle">
+                            <Setter Property="Fill" Value="Lavender"/>
+                            <Setter Property="Stroke" Value="Gray"/>
+                            <Setter Property="Margin" Value="{Binding Path=Margin}"/>
+                            <Setter Property="Width" Value="{Binding Path=Size}"/>
+                            <Setter Property="Height" Value="{Binding Path=Size}"/>
+                        </Style>
+                    </DataTemplate.Resources>
+                    <Rectangle />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </Window>

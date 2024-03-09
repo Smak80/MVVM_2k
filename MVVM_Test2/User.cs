@@ -60,5 +60,12 @@ namespace MVVM_Test2
             OnPropertyChanged(propertyName);
             return true;
         }
+
+        public User Clone()
+        {
+            var u = new User();
+            u.UpdateInfoFrom(this);
+            return u;
+        }
     }
 }
