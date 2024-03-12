@@ -17,13 +17,13 @@ public class Field : INotifyPropertyChanged
     public ushort Rows
     {
         get => _rows;
-        init => _rows = ushort.Min(ushort.Max(value, 6), 100);
+        init => _rows = ushort.Min(ushort.Max(value, 6), 50);
     }
 
     public ushort Cols
     {
         get => _cols;
-        init => _cols = ushort.Min(ushort.Max(value, 6), 100);
+        init => _cols = ushort.Min(ushort.Max(value, 6), 50);
     }
 
     public int Width

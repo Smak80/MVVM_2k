@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Test2"
         mc:Ignorable="d"
-        Title="Змейка" Width="398" Height="708" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Змейка" Width="398" Height="708" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
